@@ -2,7 +2,7 @@
 
 require "Db.php";
 
-class Patient extends Db {
+class Patients extends Db {
 
     public function list() {
         $sql = "SELECT * FROM patients";
@@ -13,10 +13,4 @@ class Patient extends Db {
         $sql = "SELECT * FROM patients WHERE id = $get";
         return $this->query($sql);
     }
-
-    // public function search() {
-    //     $sql = "SELECT * FROM patients WHERE MATCH";
-    //     $this->query($sql);
-    // }
-
 }
