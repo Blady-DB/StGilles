@@ -1,0 +1,26 @@
+button, input {
+    background-color: black;
+    color: white;
+    padding: 0.2em;
+    border-radius: 2em;
+}
+
+button:hover, input:hover {
+    background-color: red;
+}
+
+button a {
+    padding: 0.5em;
+}
+
+table {
+    padding: 1em;
+}
+
+td p, th p {
+    padding: 0 0.3em;
+}
+
+i {
+    padding: 0.3em;
+}
