@@ -1,7 +1,7 @@
 <?php
-require ('models/Db.php');
-require ('models/Patients.php');
-require ('models/RDV.php');
+require_once ('models/Db.php');
+require_once ('models/Patients.php');
+require_once ('models/RDV.php');
 
 // ----------  PATIENTS ----------
 
