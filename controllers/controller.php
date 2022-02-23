@@ -1,5 +1,7 @@
 <?php
-require ('models/model.php');
+require ('models/Db.php');
+require ('models/Patients.php');
+require ('models/RDV.php');
 
 // ----------  PATIENTS ----------
 
