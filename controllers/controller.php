@@ -22,7 +22,6 @@ function addPatientProcess() {
     if ($_POST["lastname"] != '' || $_POST["firstname"] != '' || $_POST["birthdate"] != '' || $_POST["phone"] != '' || $_POST["mail"] != '') {
 
         $add = new Patients();
-    
         $add->add($_POST["lastname"], $_POST["firstname"], $_POST["birthdate"], $_POST["phone"], $_POST["mail"]);
     
         echo "Le patient a bien été ajouté";
@@ -80,11 +79,11 @@ function addRDV() {
 function addRDVProcess() {
     require ('views/addRDVView.php');
 
-    $ajoutRDV = new RDV();
-    $ajoutRDV->add($_POST['date'], $_POST['patient']);
-
     if (isset($_POST['date'], $_POST['patient'])) {
-        header('Location: index.php?action=listRDVs');
+        $ajoutRDV = new RDV();
+        $ajoutRDV->add($_POST['date'], $_POST['patient']);
+        
+        echo "Le rendez-vous a bien été ajouté";
     } 
     else {
         echo "Il y a une erreur dans votre saisie";

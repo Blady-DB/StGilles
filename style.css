@@ -1,12 +1,20 @@
-button, input {
-    background-color: black;
+#header {
+    background-color: #7A9BD1;
+}
+
+#footer {
+    background-color: #5276BA;
+}
+
+button {
+    background-color: #5276BA;
     color: white;
     padding: 0.2em;
     border-radius: 2em;
 }
 
-button:hover, input:hover {
-    background-color: red;
+button:hover {
+    background-color: #243B60;
 }
 
 button a {
@@ -23,4 +31,29 @@ td p, th p {
 
 i {
     padding: 0.3em;
+}
+
+li {
+    display: inline;
+}
+
+input, select {
+    border: #5276BA solid;
+    padding: 0.2em;
+}
+
+input[type=submit] {
+    color: white;
+    background-color: #5276BA;
+    border: 0;
+    border-radius: 2em;
+}
+
+input[type=submit]:hover {
+    background-color: #243B60;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 1em;
 }

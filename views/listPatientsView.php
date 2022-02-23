@@ -5,48 +5,45 @@ ob_start();
 ?>
 
 <?php
-
+// if (is_countable($list) && count($list) > 0) {
 if (count($list) > 0) { ?>
-<div>
-  <table>
-    <tr><th><p>
-      Prénom
-    </p></th><th><p>
-      Nom
-    </p></th><th><p>
-      Date de naissance
-    </p></th><th><p>
-      Téléphone
-    </p></th><th><p>
-      E-mail
-    </p></th></tr>
 
   <?php
   foreach($list as $row) { ?>
-    <tr><td><p>
-      <?= $row["firstname"] ?>
-    </p></td><td><p>
-      <?= $row["lastname"] ?>
-    </p></td><td><p>
-      <?= $row["birthdate"] ?>
-    </p></td><td><p>
-      <?= $row["phone"] ?>
-    </p></td><td><p>
-      <?= $row["mail"] ?> 
-    </p></td><td><p>
-    <button>
-      <a href='index.php?action=profilePatient&id=<?= $row['id'] ?>'><i class="fas fa-user"></i>Profil</a></button>
-    </p></td><td><p>
-    <button>
-      <a href='index.php?action=deletePatient&id=<?= $row['id'] ?>'><i class="fas fa-times"></i>Supprimer</a></button>
-    </p></td></tr>
+  <div class="flex md:flex-row flex-col text-center justify-center">
+    <div class="flex flex-col px-4">
+      <h1>Prénom</h1>
+      <p><?= $row["firstname"] ?></p>
+    </div>
+    <div class="flex flex-col px-4">
+      <h1>Nom</h1>
+      <p><?= $row["lastname"] ?></p>
+    </div>
+    <div class="flex flex-col px-4">
+      <h1>Date de naissance</h1>
+      <p><?= $row["birthdate"] ?></p>
+    </div>
+    <div class="flex flex-col px-4">
+      <h1>Téléphone</h1>
+      <p><?= $row["phone"] ?></p>
+    </div>
+    <div class="flex flex-col px-4">
+      <h1>Adresse e-mail</h1>
+      <p><?= $row["mail"] ?></p>
+    </div>
+  </div>
+   <div class="md:block flex flex-col text-center"> 
+      <button class="md:my-0 my-3">
+        <a href='index.php?action=profilePatient&id=<?= $row['id'] ?>'><i class="fas fa-user"></i>Profil</a></button>
+      <button>
+        <a href='index.php?action=deletePatient&id=<?= $row['id'] ?>'><i class="fas fa-times"></i>Supprimer</a></button>
+    </div>
     <?php
     } ?>
-    </table>
-  </div>
     <?php
-  } else {
-    echo "Aucun résultat";
+  } else { ?>
+    <p>Aucun résultat</p>
+    <?php
   }
 
 $content = ob_get_clean();

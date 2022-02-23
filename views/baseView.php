@@ -9,21 +9,37 @@
     <link rel="stylesheet" href="style.css">
     <title><?= $title ?></title>
 </head>
-<body class="p-4">
-    <div class="flex justify-between">
-        <div>
-        <h1 class="font-bold uppercase text-2xl pb-3">Hôpital St Gilles - Administration</h1>
+<body>
+    <header id="header">
+        <div class="p-2 flex flex-col text-center text-white">
+            <span id="logo">
+                <center><a href="index.php"><img src="stgilles-logo.svg" alt="Logo St Gilles" class="h-32"></a></center>
+            </span>
+            <span>
+                <h1 class="font-bold uppercase text-2xl">Hôpital St Gilles - Administration</h1>
+            </span>
+            <ul class="p-2 flex flex-col md:block">
+                <li class="my-2 md:m-0 rounded-full">
+                    <button><a href="index.php?action=addRDV"><i class="fas fa-plus"></i>Ajouter un rendez-vous</a></button>
+                </li>
+                <li class="my-2 md:m-0 rounded-full">
+                    <button><a href="index.php?action=addPatient"><i class="fas fa-user"></i>Ajouter un patient</a></button>
+                </li>
+                <li class="my-2 md:m-0 rounded-full">
+                    <button><a href="index.php?action=listPatients"><i class="fas fa-users"></i>Liste des patients</a></button>
+                </li>
+                <li class="my-2 md:m-0 rounded-full">
+                    <button><a href="index.php?action=listRDVs"><i class="fas fa-clipboard-list"></i>Liste des rendez-vous</a></button>
+                </li>
+            </ul>
         </div>
-        <div>
-            <p>
-                <button><a href="index.php?action=addRDV"><i class="fas fa-plus"></i>Ajouter un rendez-vous</a></button>
-                <button><a href="index.php?action=addPatient"><i class="fas fa-user"></i>Ajouter un patient</a></button>
-                <button><a href="index.php?action=listPatients"><i class="fas fa-users"></i>Liste des patients</a></button>
-                <button><a href="index.php?action=listRDVs"><i class="fas fa-clipboard-list"></i>Liste des rendez-vous</a></button>
-            </p>
-        </div>
-    </div>
-    <h2 class="font-bold text-center text-2xl pt-3"><?= $subtitle ?></h2>
-    <?= $content ?>
+    </header>
+    <main class="p-4">
+        <div><h2 class="font-bold text-center text-2xl"><?= $subtitle ?></h2></div>
+        <?= $content ?>
+    </main>
+    <footer id="footer" class="text-center text-white p-4">
+        <p>© 2021-2022 - Hôpital St Gilles - v1.3</p>
+    </footer>
 </body>
 </html>

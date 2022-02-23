@@ -14,6 +14,7 @@ class Db {
 
     protected function query (string $sql) {
         $stmt = $this->getDb()->prepare($sql);
-        return $stmt->execute();
+        $stmt->execute();
+        return $stmt;
     }
 }

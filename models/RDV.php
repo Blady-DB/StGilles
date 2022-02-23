@@ -1,17 +1,22 @@
 <?php
 
-require "Db.php";
+require_once "Db.php";
 
 class RDV extends Db {
 
-    public function detail($id) {
-        $sql = "SELECT * FROM appointments WHERE id = '$id'";
+    public function add($rdv, $id) {
+        $sql = "INSERT INTO appointments (dateHour, idPatients) VALUES ('$rdv', '$id')";
         return $this->query($sql);
     }
 
+    public function detail($id) {
+        $sql = "SELECT * FROM appointments WHERE id = '$id'";
+        return $this->query($sql)->fetchAll();
+    }
+
     public function list() {
-        $sql = "SELECT * FROM appointments";
-        return $this->query($sql);
+        $sql = "SELECT * FROM patients INNER JOIN appointments WHERE patients.id = appointments.idPatients";
+        return $this->query($sql)->fetchAll();
     }
 
     public function modify($rdv, $id) {
