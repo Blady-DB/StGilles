@@ -5,7 +5,6 @@ ob_start();
 ?>
 
 <?php
-// if (is_countable($list) && count($list) > 0) {
 if (count($list) > 0) { ?>
 
   <?php
