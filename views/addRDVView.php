@@ -11,9 +11,7 @@ ob_start();
             <?php } ?>
         </select>
         <input type="datetime-local" name="date" placeholder="Date" required>
-        <button>
-            <input type="submit" value="Envoyer"><i class="fas fa-arrow-right"></i>
-        </button>
+        <button type="submit" value="Envoyer"><p>Envoyer</p><i class="fas fa-arrow-right"></i></button>
 </form>
 
 <?php

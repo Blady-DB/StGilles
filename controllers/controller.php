@@ -23,10 +23,15 @@ function addPatientProcess() {
 
         $add = new Patients();
         $add->add($_POST["lastname"], $_POST["firstname"], $_POST["birthdate"], $_POST["phone"], $_POST["mail"]);
-    
-        echo "Le patient a bien été ajouté";
+
+        echo '<script>';
+        echo 'alert("Le patient a bien été ajouté");';
+        echo 'window.location.href = "index.php?action=listPatients";';
+        echo '</script>';
     } else {
-        echo "Données non valides, veuillez réessayer";
+        echo '<script>';
+        echo 'alert("Les informations saisies sont incorrectes, veuillez réessayer");';
+        echo '</script>';
     }
 }
 
@@ -36,11 +41,15 @@ function modifyPatient() {
         $modify = new Patients();
     
         $modify->modify($_POST["lastname"], $_POST["firstname"], $_POST["birthdate"], $_POST["phone"], $_POST["mail"], $_POST['id']);
-    
-        echo "Le patient a bien été modifié, redirection vers la liste des patients...";
-        header("Refresh:2, url=index.php?action=listPatients");
+
+        echo '<script>';
+        echo 'alert("Le patient a bien été modifié");';
+        echo 'window.location.href = "index.php?action=profilePatient&id='.$_POST['id'].'";';
+        echo '</script>';
     } else {
-        echo "Données non valides, veuillez réessayer";
+        echo '<script>';
+        echo 'alert("Les informations saisies sont incorrectes, veuillez réessayer");';
+        echo '</script>';
     }
 }
 
@@ -59,6 +68,8 @@ function deletePatient() {
 
     return header('Location: index.php?action=listPatients');
 }
+
+
 
 // ---------- RDVs ----------
 
@@ -83,10 +94,15 @@ function addRDVProcess() {
         $ajoutRDV = new RDV();
         $ajoutRDV->add($_POST['date'], $_POST['patient']);
         
-        echo "Le rendez-vous a bien été ajouté";
+        echo '<script>';
+        echo 'alert("Le rendez-vous a bien été ajouté");';
+        echo 'window.location.href = "index.php?action=listRDVs";';
+        echo '</script>';
     } 
     else {
-        echo "Il y a une erreur dans votre saisie";
+        echo '<script>';
+        echo 'alert("Les informations saisies sont incorrectes, veuillez réessayer");';
+        echo '</script>';
     }
 }
 
@@ -97,10 +113,14 @@ function modifyRDV() {
     
         $modify->modify($_POST["date"], $_POST["id"]);
     
-        echo "Le rendez-vous du patient a bien été modifié, redirection vers la liste des patients...";
-        header("Refresh:2, url=index.php?action=listPatients");
+        echo '<script>';
+        echo 'alert("Le rendez-vous du patient a bien été modifié");';
+        echo 'window.location.href = "index.php?action=profilePatient&id='.$_POST['id'].'";';
+        echo '</script>';
     } else {
-        echo "Données non valides, veuillez réessayer";
+        echo '<script>';
+        echo 'alert("Les informations saisies sont incorrectes, veuillez réessayer");';
+        echo '</script>';
     }
 }
 

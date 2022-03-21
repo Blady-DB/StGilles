@@ -10,9 +10,7 @@ ob_start();
     <input type="date" name="birthdate" placeholder="Date de naissance" required>
     <input type="tel" name="phone" placeholder="Téléphone" pattern="^[0-9]{10}$" required>
     <input type="text" name="mail" placeholder="E-mail" required>
-    <button>
-        <input type="submit" value="Envoyer"><i class="fas fa-arrow-right"></i>
-    </button>
+    <button type="submit" value="Envoyer"><p>Envoyer</p><i class="fas fa-arrow-right"></i></button>
 </form>
 
 <?php
