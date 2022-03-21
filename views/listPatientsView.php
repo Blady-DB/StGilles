@@ -20,7 +20,7 @@ if (count($list) > 0) { ?>
     </div>
     <div class="patient">
       <h1>Date de naissance</h1>
-      <p><?= $row["birthdate"] ?></p>
+      <p><?= date("d/m/Y", strtotime($row["birthdate"]));  ?></p>
     </div>
     <div class="patient">
       <h1>Téléphone</h1>

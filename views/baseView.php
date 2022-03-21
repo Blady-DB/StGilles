@@ -38,7 +38,7 @@
         <?= $content ?>
     </main>
     <footer>
-        <p>© 2021-2022 - Hôpital St Gilles - v1.4</p>
+        <p>© 2021-2022 - Hôpital St Gilles - v1.5</p>
     </footer>
 </body>
 </html>

@@ -17,7 +17,7 @@ ob_start();
         </div>
         <div class="profil">
             <h1>Date de naissance</h1>
-            <p><?= $row["birthdate"] ?></p>
+            <p><?= date("d/m/Y", strtotime($row["birthdate"])); ?></p>
         </div>
         <div class="profil">
             <h1>Téléphone</h1>
@@ -29,15 +29,16 @@ ob_start();
         </div>
     </div>
     <?php } ?>
-    <div class="rdv-titre">
-        <h1>Rendez-vous</h1>
         <?php
-        if (count($rdv) > 0) {
+        if (count($rdv) > 0) { ?>
+        <h1>Rendez-vous</h1> <?php
             foreach($rdv as $row) { ?>
-            <p><?= $row["dateHour"] ?></p>
+            <div class="rdv-titre">
+                <p><?= date("d/m/Y H:i", strtotime($row["dateHour"])); ?></p>
+            </div>
     <?php
         }
-        ?></div>
+        ?>
         <?php 
     } else { ?>
             <p>Aucun rendez-vous assigné</P>
