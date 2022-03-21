@@ -9,7 +9,7 @@ if (count($list) > 0) { ?>
   <div class="liste-rdvs">
     <div class="rdv">
       <h1>Date et heure</h1>
-      <p><?= date("d/m/Y H:i", strtotime($row["dateHour"]));?></p>
+      <p><?= date("d/m/Y H:i", strtotime($row["dateHour"])); ?></p>
     </div>
     <div class="rdv">
       <h1>Prénom</h1>
